@@ -1,7 +1,22 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import ProductCard from "../Components/ProductCard";
 
 const ProductListingPage = () => {
-  return <div>Product listing page in progress...</div>;
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const res = await axios.get("https://fakestoreapi.com/products");
+      setProducts(res.data);
+    })();
+  }, []);
+  console.log(products);
+
+  return (
+    <>
+      <ProductCard />
+    </>
+  );
 };
 
 export default ProductListingPage;

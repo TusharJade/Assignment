@@ -6,6 +6,9 @@ module.exports = {
       "main-red": "#D6407A",
       "dark-text": "#000000",
     },
+    fontFamily: {
+      Gilroy: ["Gilroy", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [],
