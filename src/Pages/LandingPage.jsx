@@ -26,10 +26,9 @@ const dummyData = [
 const LandingPage = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <section className="scroller-none h-screen overflow-y-auto">
       <Navbar />
-
-      <section className="w-full">
+      <div className="w-full">
         <img
           className="w-full cursor-pointer"
           src="assets/banner.jpeg"
@@ -81,9 +80,9 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
-      </section>
+      </div>
       <Footer />
-    </>
+    </section>
   );
 };
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import ProductCard from "../Components/ProductCard";
+import CartSideRating from "../Components/CartSideRating";
 
 const ProductListingPage = () => {
   const [products, setProducts] = useState([]);
@@ -13,9 +13,9 @@ const ProductListingPage = () => {
   console.log(products);
 
   return (
-    <>
-      <ProductCard />
-    </>
+    <section className="fixed">
+      <CartSideRating />
+    </section>
   );
 };
 
