@@ -6,14 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import reportWebVitals from "./reportWebVitals";
+import { AuthContextProvider } from "./Context/auth-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-      <ToastContainer />
-    </BrowserRouter>
+    <AuthContextProvider>
+      <BrowserRouter>
+        <App />
+        <ToastContainer />
+      </BrowserRouter>
+    </AuthContextProvider>
   </React.StrictMode>
 );
 

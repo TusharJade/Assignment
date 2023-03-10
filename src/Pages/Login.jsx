@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useAuthContext } from "../Context/auth-context";
 
 const Login = () => {
   const navigate = useNavigate();
-  // username: "johnd",
-  // password: "m38rmF$",
+  const { setIsAuth } = useAuthContext();
   return (
     <div className="flex justify-center bg-[#fff0f0] items-center w-full h-screen">
       <div className="flex items-center bg-[#ffd4d4] justify-around shadow-2xl dark:bg-neutral-700 rounded-lg bg-white ">
@@ -46,9 +46,16 @@ const Login = () => {
                     password: formdata.get("password"),
                   }
                 );
-                console.log(res?.data);
+                setIsAuth((prev) => ({
+                  ...prev,
+                  token: res?.data?.token,
+                  userName: formdata.get("username"),
+                  isLogin: true,
+                }));
+                localStorage.setItem("token", res?.data?.token);
+                navigate("/");
+                toast.success("Logged In Successfully");
               } catch (err) {
-                console.log(err);
                 toast.error("Invalid Credentials");
               }
             }}
@@ -106,6 +113,28 @@ const Login = () => {
                 <button
                   type="button"
                   className="mt-1 p-2 border-green-400 w-full  text-sm font-bold text-green-600 rounded-md border-2 bg-green-100"
+                  onClick={async (e) => {
+                    try {
+                      const res = await axios.post(
+                        "https://fakestoreapi.com/auth/login",
+                        {
+                          username: "johnd",
+                          password: "m38rmF$",
+                        }
+                      );
+                      setIsAuth((prev) => ({
+                        ...prev,
+                        token: res?.data?.token,
+                        userName: "johnd",
+                        isLogin: true,
+                      }));
+                      localStorage.setItem("token", res?.data?.token);
+                      navigate("/");
+                      toast.success("Logged in as Guest");
+                    } catch (err) {
+                      toast.error("Invalid Credentials");
+                    }
+                  }}
                 >
                   Guest Login
                 </button>
