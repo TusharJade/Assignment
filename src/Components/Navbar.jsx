@@ -9,13 +9,13 @@ const Navbar = () => {
   return (
     <nav className="w-full justify-between flex px-14 mt-[1.25rem] mb-10">
       <div className="flex w-1/2 justify-between">
-        <div className="flex text-main-red font-[600] gap-7">
+        <div className="flex text-main-red font-[600] gap-7 items-center">
           <button>About</button>
           <button>Cart</button>
           <button>All Products</button>
-          <button onClick={() => navigate("https://getbinks.com/blog/")}>
+          <a href="https://getbinks.com/blog/" rel="noreferrer" target="_blank">
             Blog
-          </button>
+          </a>
           <button>Track Order</button>
         </div>
         <div

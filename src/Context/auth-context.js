@@ -4,9 +4,9 @@ const AuthContext = createContext(null);
 
 const AuthContextProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState({
-    token: "",
-    userName: "",
-    isLogin: false,
+    token: localStorage.getItem("USER_TOKEN"),
+    userName: localStorage.getItem("USER_NAME"),
+    isLogin: localStorage.getItem("USER_TOKEN") ? true : false,
   });
   return (
     <AuthContext.Provider value={{ isAuth, setIsAuth }}>

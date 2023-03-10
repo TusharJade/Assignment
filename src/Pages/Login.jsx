@@ -52,7 +52,8 @@ const Login = () => {
                   userName: formdata.get("username"),
                   isLogin: true,
                 }));
-                localStorage.setItem("token", res?.data?.token);
+                localStorage.setItem("USER_TOKEN", res?.data?.token);
+                localStorage.setItem("USER_NAME", "johnd");
                 navigate("/");
                 toast.success("Logged In Successfully");
               } catch (err) {
@@ -128,7 +129,8 @@ const Login = () => {
                         userName: "johnd",
                         isLogin: true,
                       }));
-                      localStorage.setItem("token", res?.data?.token);
+                      localStorage.setItem("USER_TOKEN", res?.data?.token);
+                      localStorage.setItem("USER_NAME", "johnd");
                       navigate("/");
                       toast.success("Logged in as Guest");
                     } catch (err) {
