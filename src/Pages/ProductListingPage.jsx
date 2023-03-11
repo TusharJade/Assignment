@@ -77,8 +77,6 @@ const ProductListingPage = () => {
     })();
   }, []);
 
-  console.log(products);
-
   return (
     <section className="w-full flex">
       <div className="md:block hidden md:w-[35%]">
@@ -130,8 +128,8 @@ const ProductListingPage = () => {
           </div>
         </div>
         {isCartegories && (
-          <div className="fixed bottom-0 z-[60] right-0 h-full min-h-[100vh] w-full min-w-[100vw] backdrop-blur-sm flex items-center">
-            <div className="absolute top-[5rem] mx-auto left-0 right-0 w-[31.25rem] z-[30] flex justify-around flex-wrap gap-x-9 gap-y-5 bg-[#f8f8ff] rounded-[2.25rem] pb-8 px-8">
+          <div className="fixed bottom-0 z-[60] right-0 h-full min-h-[100vh] w-full min-w-[100vw] bg-[rgba(0,0,0,0.5)]  flex items-center">
+            <div className="absolute top-[5rem] mx-auto left-0 right-0 w-[31.25rem] z-[30] flex justify-around flex-wrap gap-x-9 gap-y-5 bg-[#FAFAFB] rounded-[2.25rem] pb-8 px-8">
               {dummyData.map((item, index) => {
                 return (
                   <div
@@ -161,7 +159,7 @@ const ProductListingPage = () => {
                 );
               })}
               <div
-                className="absolute -bottom-[3.5rem] cursor-pointer bg-[#f8f8ff] p-3 rounded-xl"
+                className="absolute -bottom-[3.5rem] cursor-pointer bg-[#FAFAFB] p-3 rounded-xl"
                 onClick={() => setIsCartegories(false)}
               >
                 <RxCross1 className="left-[50%] text-[black] font-[700] text-[1.2rem]" />

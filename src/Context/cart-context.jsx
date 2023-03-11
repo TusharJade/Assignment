@@ -1,7 +1,8 @@
-import React from "react";
+import React, { createContext } from "react";
 
-const AddToCart = () => {
-  return <div></div>;
+const AddToCartProvider = ({ children }) => {
+  const AddToCartContext = createContext(null);
+  return <AddToCartContext.Provider>{children}</AddToCartContext.Provider>;
 };
 
-export default AddToCart;
+export { AddToCartProvider };
