@@ -5,7 +5,7 @@ import { BiNotepad } from "react-icons/bi";
 import { BsFillCartFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 
-const ProductFooterParent = ({ onClick }) => {
+const ProductFooterParent = () => {
   return (
     <ProductFooter
       data={[
@@ -14,7 +14,6 @@ const ProductFooterParent = ({ onClick }) => {
         { title: "Cart", icon: <BsFillCartFill />, path: "/cart" },
         { title: "Profile", icon: <CgProfile />, path: "/profile" },
       ]}
-      onClick={onClick}
     />
   );
 };
