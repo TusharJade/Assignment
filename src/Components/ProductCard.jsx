@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import ProductModal from "./ProductModal";
 import { AiFillStar } from "react-icons/ai";
+import { useAddToCart } from "../Context/cart-context";
 
 const ProductCard = ({ data }) => {
+  const { cartDispatch } = useAddToCart();
   const [IsModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
@@ -31,7 +33,10 @@ const ProductCard = ({ data }) => {
         </div>
         <div className="flex flex-col items-center">
           <img className="w-[4rem] h-[4rem]" src={data.image} alt="product" />
-          <button className="border-[1px] font-[600] px-3 rounded-md py-1 border-main-red text-main-red mt-2">
+          <button
+            className="border-[1px] font-[600] px-3 rounded-md py-1 border-main-red text-main-red mt-2"
+            onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: data })}
+          >
             Add
           </button>
         </div>

@@ -16,19 +16,21 @@ const ProductFooter = ({ data, onClick }) => {
           );
         }
       `}</style>
-      <div
-        onClick={onClick}
-        className="bg-[#494b69] w-[3.3rem] h-[3.3rem] flex items-center justify-center rounded-full flex-col mb-3 cursor-pointer mx-auto"
-      >
-        <div class="flex flex-col items-center justify-between space-y-1 mt-[0.125rem]">
-          <div class="h-px w-3 rounded-full bg-[#FFFFFF]"></div>
-          <div class="h-px w-[18px] rounded-full bg-[#ffffff80]"></div>
-          <div class="h-px w-3 rounded-full bg-[#FFFFFF]"></div>
+      {location === "/all-products" && (
+        <div
+          onClick={onClick}
+          className="bg-[#494b69] w-[3.3rem] h-[3.3rem] flex items-center justify-center rounded-full flex-col mb-3 cursor-pointer mx-auto"
+        >
+          <div class="flex flex-col items-center justify-between space-y-1 mt-[0.125rem]">
+            <div class="h-px w-3 rounded-full bg-[#FFFFFF]"></div>
+            <div class="h-px w-[18px] rounded-full bg-[#ffffff80]"></div>
+            <div class="h-px w-3 rounded-full bg-[#FFFFFF]"></div>
+          </div>
+          <div className="text-[#ffffff] font-[500] text-[0.75rem] mt-[0.1875rem]">
+            Menu
+          </div>
         </div>
-        <div className="text-[#ffffff] font-[500] text-[0.75rem] mt-[0.1875rem]">
-          Menu
-        </div>
-      </div>
+      )}
       <div className="w-full h-[0.0625rem] pink-line"></div>
       <div className="flex bg-[#FBFBFF] justify-center items-center h-[4rem] w-full gap-x-7">
         {data.map((item, index) => {

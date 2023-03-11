@@ -7,16 +7,19 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import reportWebVitals from "./reportWebVitals";
 import { AuthContextProvider } from "./Context/auth-context";
+import { AddToCartProvider } from "./Context/cart-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <BrowserRouter>
-        <App />
-        <ToastContainer />
-      </BrowserRouter>
-    </AuthContextProvider>
+    <AddToCartProvider>
+      <AuthContextProvider>
+        <BrowserRouter>
+          <App />
+          <ToastContainer />
+        </BrowserRouter>
+      </AuthContextProvider>
+    </AddToCartProvider>
   </React.StrictMode>
 );
 
