@@ -1,8 +1,15 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
+import { GoPlus } from "react-icons/go";
+import { TiMinus } from "react-icons/ti";
+import { useAddToCart } from "../Context/cart-context";
 
 const ProductModal = ({ data, onClose }) => {
+  const { cartState, cartDispatch } = useAddToCart();
+  const itemQuantity = cartState.cart.find(
+    (cartItem) => cartItem.id === data.id
+  )?.quantity;
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] z-[50]">
       <div className="fixed top-0 right-0 w-full md:w-[65%] bg-[rgba(0,0,0,0.5)] h-full z-[50] flex justify-center items-center">
@@ -13,9 +20,45 @@ const ProductModal = ({ data, onClose }) => {
               src={data.image}
               alt="product"
             />
-            <button className="border-[1px] font-[600] rounded-md py-1 border-main-red text-main-red mt-3 w-full">
-              Add
-            </button>
+            {itemQuantity > 0 ? (
+              <div className="border-main-red mt-2 border-[1.5px] font-[600] rounded-md flex items-center justify-center">
+                <button
+                  className="px-2 py-2 text-main-red"
+                  onClick={() =>
+                    cartDispatch({
+                      type: "INCREASE_QUANTITY",
+                      payload: data.id,
+                    })
+                  }
+                >
+                  <GoPlus />
+                </button>
+                <span className="-mt-[2px]">{itemQuantity}</span>
+                <button
+                  className="px-2 py-2 text-main-red"
+                  onClick={() =>
+                    cartDispatch({
+                      type: "DECREASE_QUANTITY",
+                      payload: data.id,
+                    })
+                  }
+                >
+                  <TiMinus />
+                </button>
+              </div>
+            ) : (
+              <button
+                className="border-[1.5px] font-[600] px-3 rounded-md py-1 border-main-red text-main-red mt-2 w-full"
+                onClick={() =>
+                  cartDispatch({
+                    type: "ADD_TO_CART",
+                    payload: { ...data, quantity: 1 },
+                  })
+                }
+              >
+                Add
+              </button>
+            )}
           </div>
           <div className="max-w-[28rem] space-y-1 my-auto">
             <div className="font-[600] text-[1.25rem]">{data.title}</div>

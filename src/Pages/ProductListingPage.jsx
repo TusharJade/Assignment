@@ -62,7 +62,7 @@ const ProductListingPage = () => {
   const finalFilter = filterCategories(
     filterProducts(products, search),
     categories
-  );
+  ).map((item) => ({ ...item, quantity: 0 }));
 
   useEffect(() => {
     (async () => {
@@ -129,19 +129,21 @@ const ProductListingPage = () => {
           </div>
         </div>
 
-        <div
-          onClick={() => setIsCartegories(true)}
-          className="bg-[#494b69] absolute bottom-[4rem] left-0 right-0 w-[3.3rem] h-[3.3rem] flex items-center justify-center rounded-full flex-col mb-3 cursor-pointer mx-auto"
-        >
-          <div class="flex flex-col items-center justify-between space-y-1 mt-[0.125rem]">
-            <div class="h-px w-3 rounded-full bg-[#FFFFFF]"></div>
-            <div class="h-px w-[18px] rounded-full bg-[#ffffff80]"></div>
-            <div class="h-px w-3 rounded-full bg-[#FFFFFF]"></div>
+        {finalFilter?.length > 0 && (
+          <div
+            onClick={() => setIsCartegories(true)}
+            className="bg-[#494b69] sticky bottom-[4.7rem] left-[50%] w-[3.3rem] h-[3.3rem] flex items-center justify-center rounded-full flex-col mb-3 cursor-pointer"
+          >
+            <div class="flex flex-col items-center justify-between space-y-1 mt-[0.125rem]">
+              <div class="h-px w-3 rounded-full bg-[#FFFFFF]"></div>
+              <div class="h-px w-[18px] rounded-full bg-[#ffffff80]"></div>
+              <div class="h-px w-3 rounded-full bg-[#FFFFFF]"></div>
+            </div>
+            <div className="text-[#ffffff] font-[500] text-[0.75rem] mt-[0.1875rem]">
+              Menu
+            </div>
           </div>
-          <div className="text-[#ffffff] font-[500] text-[0.75rem] mt-[0.1875rem]">
-            Menu
-          </div>
-        </div>
+        )}
 
         {isCartegories && (
           <div className="fixed bottom-0 z-[60] right-0 h-full min-h-[100vh] w-full min-w-[100vw] bg-[rgba(0,0,0,0.5)] flex items-center">
