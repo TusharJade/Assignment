@@ -20,7 +20,7 @@ const CartSideRating = () => {
         {Array(5)
           .fill()
           .map((_, i) => {
-            return <AiFillStar className="text-[#cdcd27]" />;
+            return <AiFillStar key={i} className="text-[#cdcd27]" />;
           })}
       </div>
       <div className="mt-7 flex gap-x-3">

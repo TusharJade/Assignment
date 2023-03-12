@@ -26,24 +26,24 @@ const ProductModal = ({ data, onClose }) => {
                   className="px-2 py-2 text-main-red"
                   onClick={() =>
                     cartDispatch({
-                      type: "INCREASE_QUANTITY",
-                      payload: data.id,
-                    })
-                  }
-                >
-                  <GoPlus />
-                </button>
-                <span className="-mt-[2px]">{itemQuantity}</span>
-                <button
-                  className="px-2 py-2 text-main-red"
-                  onClick={() =>
-                    cartDispatch({
                       type: "DECREASE_QUANTITY",
                       payload: data.id,
                     })
                   }
                 >
                   <TiMinus />
+                </button>
+                <span className="-mt-[2px]">{itemQuantity}</span>
+                <button
+                  className="px-2 py-2 text-main-red"
+                  onClick={() =>
+                    cartDispatch({
+                      type: "INCREASE_QUANTITY",
+                      payload: data.id,
+                    })
+                  }
+                >
+                  <GoPlus />
                 </button>
               </div>
             ) : (

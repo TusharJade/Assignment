@@ -33,6 +33,7 @@ const ProductFooter = ({ data }) => {
               ) : (
                 <span
                   onClick={() => navigate(item.path)}
+                  key={index}
                   className="text-[1.1rem] bg-[white] cursor-pointer"
                 >
                   {item.icon}
