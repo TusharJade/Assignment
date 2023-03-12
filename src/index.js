@@ -8,18 +8,21 @@ import "react-toastify/dist/ReactToastify.css";
 import reportWebVitals from "./reportWebVitals";
 import { AuthContextProvider } from "./Context/auth-context";
 import { AddToCartProvider } from "./Context/cart-context";
+import { AddressContextProvider } from "./Context/address-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AddToCartProvider>
-      <AuthContextProvider>
-        <BrowserRouter>
-          <App />
-          <ToastContainer />
-        </BrowserRouter>
-      </AuthContextProvider>
-    </AddToCartProvider>
+    <AddressContextProvider>
+      <AddToCartProvider>
+        <AuthContextProvider>
+          <BrowserRouter>
+            <App />
+            <ToastContainer />
+          </BrowserRouter>
+        </AuthContextProvider>
+      </AddToCartProvider>
+    </AddressContextProvider>
   </React.StrictMode>
 );
 

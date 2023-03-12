@@ -3,3 +3,14 @@
 .scroller-none::-webkit-scrollbar {
   width: 0px;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  background: #ffe1ec;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #fe5f9c;
+  border-radius: 10px;
+}

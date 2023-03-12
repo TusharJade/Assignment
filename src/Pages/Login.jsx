@@ -51,6 +51,7 @@ const Login = () => {
                   token: res?.data?.token,
                   userName: formdata.get("username"),
                   isLogin: true,
+                  info: res?.data,
                 }));
                 localStorage.setItem("USER_TOKEN", res?.data?.token);
                 localStorage.setItem("USER_NAME", "johnd");
@@ -128,6 +129,7 @@ const Login = () => {
                         token: res?.data?.token,
                         userName: "johnd",
                         isLogin: true,
+                        info: res.data,
                       }));
                       localStorage.setItem("USER_TOKEN", res?.data?.token);
                       localStorage.setItem("USER_NAME", "johnd");

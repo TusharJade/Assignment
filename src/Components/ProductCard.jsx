@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ProductModal from "./ProductModal";
 import { AiFillStar } from "react-icons/ai";
 import { useAddToCart } from "../Context/cart-context";
 import { GoPlus } from "react-icons/go";
 import { TiMinus } from "react-icons/ti";
+import ProductModal from "./Modals/ProductModal";
 
 const ProductCard = ({ data }) => {
   const { cartState, cartDispatch } = useAddToCart();

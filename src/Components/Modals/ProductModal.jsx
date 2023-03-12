@@ -3,7 +3,7 @@ import { AiFillStar } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 import { GoPlus } from "react-icons/go";
 import { TiMinus } from "react-icons/ti";
-import { useAddToCart } from "../Context/cart-context";
+import { useAddToCart } from "../../Context/cart-context";
 
 const ProductModal = ({ data, onClose }) => {
   const { cartState, cartDispatch } = useAddToCart();

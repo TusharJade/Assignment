@@ -32,6 +32,7 @@ const Navbar = () => {
           className="text-main-red font-[600] rounded-md px-4 bg-[#fce4e8] cursor-pointer"
           onClick={() => {
             localStorage.removeItem("token");
+            localStorage.removeItem("userName");
             navigate("/");
             toast.success("Logged Out Successfully");
             setIsAuth((prev) => ({
