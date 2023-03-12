@@ -9,20 +9,23 @@ import reportWebVitals from "./reportWebVitals";
 import { AuthContextProvider } from "./Context/auth-context";
 import { AddToCartProvider } from "./Context/cart-context";
 import { AddressContextProvider } from "./Context/address-context";
+import { OrdersContextProvider } from "./Context/orders-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AddressContextProvider>
-      <AddToCartProvider>
-        <AuthContextProvider>
-          <BrowserRouter>
-            <App />
-            <ToastContainer />
-          </BrowserRouter>
-        </AuthContextProvider>
-      </AddToCartProvider>
-    </AddressContextProvider>
+    <OrdersContextProvider>
+      <AddressContextProvider>
+        <AddToCartProvider>
+          <AuthContextProvider>
+            <BrowserRouter>
+              <App />
+              <ToastContainer />
+            </BrowserRouter>
+          </AuthContextProvider>
+        </AddToCartProvider>
+      </AddressContextProvider>
+    </OrdersContextProvider>
   </React.StrictMode>
 );
 
