@@ -4,16 +4,20 @@ import CentralModal from "../../Utils/CentralModal";
 import { RxCross1 } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
 import { useOrderContext } from "../../Context/orders-context";
+import { useAddToCart } from "../../Context/cart-context";
+import { toast } from "react-toastify";
 
-const SelectAddressModal = ({ onClose, products }) => {
+const SelectAddressModal = ({ onClose, products, value }) => {
   const { address } = useAddressContext();
   const { setOrders } = useOrderContext();
+  const { cartDispatch } = useAddToCart();
   const navigate = useNavigate();
 
   const [finalData, setFinalData] = useState({
     address: "",
     date: "",
     allProducts: [],
+    totalValue: 0,
   });
 
   return (
@@ -38,6 +42,7 @@ const SelectAddressModal = ({ onClose, products }) => {
                         address: item.address,
                         date: new Date().toISOString().slice(0, 10),
                         allProducts: products,
+                        totalValue: value,
                       }))
                     }
                   />
@@ -50,10 +55,15 @@ const SelectAddressModal = ({ onClose, products }) => {
         <button
           className="flex mx-auto items-center justify-center border-[1.5px] border-main-red w-[6rem] py-1 rounded-lg text-main-red font-[600] mt-4"
           onClick={() => {
-            setOrders((prev) => {
-              navigate("/orders");
-              return [...prev, finalData];
-            });
+            if (finalData.address === "") {
+              toast.error("Please select an address");
+            } else {
+              cartDispatch({ type: "CLEAR_CART" });
+              setOrders((prev) => {
+                navigate("/orders");
+                return [...prev, finalData];
+              });
+            }
           }}
         >
           Continue

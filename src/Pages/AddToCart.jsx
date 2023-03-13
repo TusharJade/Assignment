@@ -7,7 +7,6 @@ import ProductCard from "../Components/ProductCard";
 import ProductFooterParent from "../Components/ProductFooterParent";
 import { useAuthContext } from "../Context/auth-context";
 import { useAddToCart } from "../Context/cart-context";
-import CentralModal from "../Utils/CentralModal";
 
 const AddToCart = () => {
   const { isAuth } = useAuthContext();
@@ -108,6 +107,7 @@ const AddToCart = () => {
           <SelectAddressModal
             onClose={() => setIsAddressModal(false)}
             products={finalCart}
+            value={value}
           />
         )}
         <ProductFooterParent />
