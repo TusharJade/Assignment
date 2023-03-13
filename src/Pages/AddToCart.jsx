@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import CartSideRating from "../Components/CartSideRating";
 import SelectAddressModal from "../Components/Modals/SelectAddressModal";
 import ProductCard from "../Components/ProductCard";
@@ -27,7 +28,7 @@ const AddToCart = () => {
       <div className="md:block hidden md:w-[35%]">
         <CartSideRating />
       </div>
-      <div className="scroller-none relative w-[100%] overflow-y-auto md:w-[65%] bg-[#FBFBFF] h-screen">
+      <div className="scroller-none relative w-[100%] overflow-y-auto md:w-[65%] bg-[#FBFBFF] h-screen z-[50]">
         <div className="px-6 py-4">
           <img
             className="cursor-pointer"
@@ -49,7 +50,7 @@ const AddToCart = () => {
             ))}
           </div>
           {finalCart?.length === 0 && (
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center -z-[20]">
               Your cart is emprty ☹️...
             </div>
           )}
@@ -89,7 +90,14 @@ const AddToCart = () => {
               </div>
               <button
                 className="bg-main-red rounded-lg text-[#ffffff] font-[600] px-5 py-1.5"
-                onClick={() => setIsAddressModal(true)}
+                onClick={() => {
+                  if (isAuth.isLogin) {
+                    setIsAddressModal(true);
+                  } else {
+                    toast.error("Please Login First");
+                    navigate("/login");
+                  }
+                }}
               >
                 Place Order
               </button>

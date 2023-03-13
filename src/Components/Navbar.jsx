@@ -10,7 +10,13 @@ const Navbar = () => {
     <nav className="w-full justify-between flex px-14 mt-[1.25rem] mb-10">
       <div className="flex w-1/2 justify-between">
         <div className="flex text-main-red font-[600] gap-7 items-center">
-          <button>About</button>
+          <a
+            href="https://getbinks.com/about/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            About
+          </a>
           <button onClick={() => navigate("/cart")}>Cart</button>
           <button onClick={() => navigate("/all-products")}>
             All Products

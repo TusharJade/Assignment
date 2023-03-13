@@ -13,13 +13,13 @@ const AddressContextProvider = ({ children }) => {
     {
       id: 2,
       address:
-        "202/B wing, Shreeji Apartment, Near Shreeji Hospital, Kandivali East, Mumbai, Maharashtra 400101, India",
+        "28-29, 6th Main, Gandhi Nagar, Bangalore, Karnataka, 560009 ,India",
       label: "Work",
     },
     {
       id: 3,
       address:
-        "202/B wing, Shreeji Apartment, Near Shreeji Hospital, Kandivali East, Mumbai, Maharashtra 400101, India",
+        "819, No 6, 8th Floor, B-wing, Mittal Towers, M G Road, Bangalore, Karnataka, 56000, India",
       label: "Other",
     },
   ]);

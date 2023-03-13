@@ -27,30 +27,55 @@ const MyProfile = () => {
             <div>
               <div className="text-[0.75rem] font-[500]">Hello,</div>
               <div className="text-[1.375rem] font-[700] mt-2">
-                {isAuth.userName}
+                {isAuth.isLogin ? (
+                  isAuth.userName
+                ) : (
+                  <div className="text-[1.1rem] font-[600]">
+                    Please Login first...
+                  </div>
+                )}
               </div>
             </div>
-            <button
-              className="font-[600]"
-              onClick={() => {
-                localStorage.removeItem("token");
-                localStorage.removeItem("userName");
-                navigate("/");
-                toast.success("Logged Out Successfully");
-                setIsAuth((prev) => ({
-                  ...prev,
-                  token: "",
-                  userName: "",
-                  isLogin: false,
-                }));
-              }}
-            >
-              Logout
-            </button>
+            {isAuth.isLogin ? (
+              <button
+                className="font-[600]"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  localStorage.removeItem("userName");
+                  navigate("/");
+                  toast.success("Logged Out Successfully");
+                  setIsAuth((prev) => ({
+                    ...prev,
+                    token: "",
+                    userName: "",
+                    isLogin: false,
+                  }));
+                }}
+              >
+                Logout
+              </button>
+            ) : (
+              <button
+                className="font-[600]"
+                onClick={() => {
+                  navigate("/login");
+                  toast.error("Please Login First");
+                }}
+              >
+                Login
+              </button>
+            )}
           </div>
           <div
             className="w-[65%] mx-auto mt-2 font-[600] bg-[#FFFFFB] flex items-center p-4 text-blue-text justify-between rounded-[0.875rem] cursor-pointer"
-            onClick={() => setIsAddress(true)}
+            onClick={() => {
+              if (isAuth.isLogin) {
+                setIsAddress(true);
+              } else {
+                toast.error("Please Login First");
+                navigate("/login");
+              }
+            }}
           >
             <div className="flex items-center">
               <div className="text-[1.3rem]">
