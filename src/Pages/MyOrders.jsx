@@ -1,12 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import CartSideRating from "../Components/CartSideRating";
+import OrdersCard from "../Components/OrdersCard";
 import ProductFooterParent from "../Components/ProductFooterParent";
 import { useAuthContext } from "../Context/auth-context";
+import { useOrderContext } from "../Context/orders-context";
 
 const MyOrders = () => {
   const { isAuth } = useAuthContext();
+  const { orders } = useOrderContext();
   const navigate = useNavigate();
+
+  console.log(orders);
   return (
     <section className="w-full flex">
       <div className="md:block hidden md:w-[35%]">
@@ -26,6 +31,7 @@ const MyOrders = () => {
           <div className="font-[300] mx-2 text-[1.125rem]">
             Here are your orders
           </div>
+          <OrdersCard />
         </div>
         <ProductFooterParent />
       </div>

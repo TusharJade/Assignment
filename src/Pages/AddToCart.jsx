@@ -1,14 +1,18 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CartSideRating from "../Components/CartSideRating";
+import SelectAddressModal from "../Components/Modals/SelectAddressModal";
 import ProductCard from "../Components/ProductCard";
 import ProductFooterParent from "../Components/ProductFooterParent";
 import { useAuthContext } from "../Context/auth-context";
 import { useAddToCart } from "../Context/cart-context";
+import CentralModal from "../Utils/CentralModal";
 
 const AddToCart = () => {
   const { isAuth } = useAuthContext();
   const { cartState } = useAddToCart();
   const navigate = useNavigate();
+  const [isAddressModal, setIsAddressModal] = useState(false);
 
   const finalCart = cartState.cart.filter((item) => item.quantity > 0);
 
@@ -83,11 +87,20 @@ const AddToCart = () => {
                   </div>
                 </div>
               </div>
-              <button className="bg-main-red rounded-lg text-[#ffffff] font-[600] px-5 py-1.5">
+              <button
+                className="bg-main-red rounded-lg text-[#ffffff] font-[600] px-5 py-1.5"
+                onClick={() => setIsAddressModal(true)}
+              >
                 Place Order
               </button>
             </div>
           </>
+        )}
+        {isAddressModal && (
+          <SelectAddressModal
+            onClose={() => setIsAddressModal(false)}
+            products={finalCart}
+          />
         )}
         <ProductFooterParent />
       </div>

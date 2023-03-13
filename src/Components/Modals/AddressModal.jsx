@@ -10,7 +10,6 @@ const AddressModal = ({ onClose }) => {
   const { address, setAddress } = useAddressContext();
   const [isNewAddress, setIsNewAddress] = useState(false);
   const [newAddress, setNewAddress] = useState({ text: "", label: "" });
-  console.log(address);
   return (
     <>
       <CentralModal>

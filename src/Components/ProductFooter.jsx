@@ -20,11 +20,10 @@ const ProductFooter = ({ data }) => {
       <div className="flex bg-[#FBFBFF] justify-center items-center h-[4rem] w-full gap-x-7">
         {data.map((item, index) => {
           return (
-            <>
+            <div key={index}>
               {location === item.path ? (
                 <div
                   className="text-main-red text-[0.875rem] font-[500] border-main-red py-1 rounded-full px-3 border-[1px] flex items-center justify-center cursor-pointer"
-                  key={index}
                   onClick={() => navigate(item.path)}
                 >
                   <span>{item.icon}</span>
@@ -39,7 +38,7 @@ const ProductFooter = ({ data }) => {
                   {item.icon}
                 </span>
               )}
-            </>
+            </div>
           );
         })}
       </div>
