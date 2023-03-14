@@ -33,9 +33,14 @@ const ProductFooter = ({ data }) => {
                 <span
                   onClick={() => navigate(item.path)}
                   key={index}
-                  className="text-[1.1rem] bg-[white] cursor-pointer"
+                  className="relative text-[1.1rem] bg-[white] cursor-pointer"
                 >
                   {item.icon}
+                  {item.badge > 0 && (
+                    <span className="absolute font-[500] -right-1.5 text-[0.75rem] flex items-center justify-center -top-[9.5px] bg-main-red rounded-[100%] px-[0.3125rem] text-[white]">
+                      {item.badge}
+                    </span>
+                  )}
                 </span>
               )}
             </div>

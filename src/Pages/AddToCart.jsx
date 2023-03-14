@@ -71,15 +71,15 @@ const AddToCart = () => {
                 }
               `}</style>
               <div className="flex items-center">
-                <div className="font-[600] text-[1.25rem]">
+                <div className="font-[600] text-[1.1rem] sm:text-[1.25rem]">
                   {finalCart?.length} Items
                 </div>
-                <div className="long-line w-[1.8px] h-12 mx-5"></div>
+                <div className="long-line w-[1.8px] h-12 mx-3 sm:mx-5"></div>
                 <div>
                   <div className="text-[#aaacd0bf] text-[0.75rem] font-[500]">
                     Estimated Total
                   </div>
-                  <div className="text-[#617EFF] text-[1.75rem]">
+                  <div className="text-[#617EFF] text-[1.5rem] sm:text-[1.75rem]">
                     <span className="font-[600] text-[0.75rem]">$</span>
                     <span className="font-[700] ml-[0.0625rem]">
                       {value}
@@ -88,7 +88,7 @@ const AddToCart = () => {
                 </div>
               </div>
               <button
-                className="bg-main-red rounded-lg text-[#ffffff] font-[600] px-5 py-1.5"
+                className="bg-main-red rounded-lg text-[#ffffff] font-[600] sm:px-5 py-1.5 px-2.5"
                 onClick={() => {
                   if (isAuth.isLogin) {
                     setIsAddressModal(true);

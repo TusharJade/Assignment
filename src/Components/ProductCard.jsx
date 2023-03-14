@@ -11,15 +11,13 @@ const ProductCard = ({ data }) => {
   const itemQuantity = cartState.cart.find(
     (cartItem) => cartItem.id === data.id
   )?.quantity;
-  const screenWidth = window.innerWidth;
+
   return (
     <>
-      <div className="bg-[rgba(255,255,255,1)] flex justify-between sm:px-4 rounded sm:py-2 px-4 py-[1.125rem] shadow-[0_8px_16px_rgba(138,106,205,0.08)]">
+      <div className="bg-[rgba(255,255,255,1)] flex justify-between sm:px-4 rounded sm:py-2 px-4 py-4 shadow-[0_8px_16px_rgba(138,106,205,0.08)]">
         <div className="flex flex-col">
           <div className="leading-[1.4rem] sm:leading-normal sm:text-[1.125rem]">
-            {screenWidth > 640
-              ? data?.title?.slice(0, 45)
-              : data?.title?.slice(0, 24)}
+            {data?.title?.slice(0, 24)}
           </div>
           <div className="text-[#617EFF] font-Gilroy sm:mt-0 mt-1.5">
             <span className="font-[600] text-[0.625rem]">$</span>
@@ -37,7 +35,7 @@ const ProductCard = ({ data }) => {
             {data?.rating?.rate} ({data?.rating?.count})
           </div>
           <div
-            className="cursor-pointer w-max sm:mt-auto font-[600] text-main-red text-[0.875rem] mt-2"
+            className="cursor-pointer sm:leading-[1.4rem] leading-none w-max sm:mt-auto font-[600] text-main-red text-[0.875rem] mt-auto"
             onClick={() => setIsModalOpen(true)}
           >
             View Details

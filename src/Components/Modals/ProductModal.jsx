@@ -11,12 +11,12 @@ const ProductModal = ({ data, onClose }) => {
     (cartItem) => cartItem.id === data.id
   )?.quantity;
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.5)] z-[50]">
-      <div className="fixed top-0 right-0 w-full md:w-[65%] bg-[rgba(0,0,0,0.5)] h-full z-[50] flex justify-center items-center">
-        <div className="bg-[#FAFAFB] justify-between flex rounded-[2.25rem] px-6 py-5 relative">
-          <div className="mr-6 my-auto">
+    <div className="fixed inset-0 w-full h-screen bg-[rgba(0,0,0,0.5)] z-[50]">
+      <div className="absolute left-0 right-0 md:left-[35%] mx-auto w-1/2 lg:w-[65%] h-full z-[50] flex justify-center items-center">
+        <div className="bg-[#FAFAFB] justify-between flex-col lg:flex-row flex rounded-[2.25rem] px-5 sm:px-6 sm:py-5 pt-4 pb-5 relative">
+          <div className="mr-0 sm:mr-6 my-auto">
             <img
-              className="w-[10rem] h-[10rem]"
+              className="sm:w-[10rem] mx-auto w-[5rem] h-[5rem] sm:h-[10rem]"
               src={data.image}
               alt="product"
             />
@@ -60,9 +60,13 @@ const ProductModal = ({ data, onClose }) => {
               </button>
             )}
           </div>
-          <div className="max-w-[28rem] space-y-1 my-auto">
-            <div className="font-[600] text-[1.25rem]">{data.title}</div>
-            <div>{data.description}</div>
+          <div className="min-w-[13.5rem] sm:max-w-[22rem] lg:max-w-[28rem] space-y-1 my-auto">
+            <div className="font-[600] text-[1rem] sm:text-[1.25rem] lg:mt-0 mt-2">
+              {data.title}
+            </div>
+            <div className="text-[0.7813rem] sm:text-[1rem] break-words">
+              {data.description}
+            </div>
             <div className="text-[#617EFF] font-Gilroy">
               <span className="text-[0.75rem] font-[500] text-[#6c6e8bbf]">
                 Price :
