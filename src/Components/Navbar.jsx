@@ -31,7 +31,7 @@ const Navbar = () => {
           onClick={() => navigate("/all-products")}
         >
           <img src="assets/binksIcon.svg" alt="icon" />
-          <div className="text-[0.75rem] font-[300] absolute top-[1.6rem] left-8">
+          <div className="text-[0.75rem] font-[300] absolute top-[1.6rem] left-8 w-[4rem]">
             Yours Truly
           </div>
         </div>

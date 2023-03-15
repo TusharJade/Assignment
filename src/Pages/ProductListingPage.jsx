@@ -118,7 +118,7 @@ const ProductListingPage = () => {
             </div>
           </div>
 
-          <div className="flex sm:w-full flex-col space-y-4 items-center justify-center mb-16">
+          <div className="flex sm:w-full flex-col space-y-4 items-center justify-center mb-24">
             {finalFilter.map((item, index) => {
               return (
                 <div className="w-[90%] sm:w-[85%]" key={index}>

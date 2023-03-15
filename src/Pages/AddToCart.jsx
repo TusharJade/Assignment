@@ -56,7 +56,7 @@ const AddToCart = () => {
         </div>
         {finalCart?.length > 0 && (
           <>
-            <div className="fixed bottom-[8.75rem] py-[3px] flex items-center justify-center font-[500] bg-[#617EE1] text-[0.75rem] w-full md:w-[65%] text-[#FEFEFE]">
+            <div className="fixed bottom-[8.35rem] sm:bottom-[8.75rem] py-[3px] flex items-center justify-center font-[500] bg-[#617EE1] text-[0.75rem] w-full md:w-[65%] text-[#FEFEFE]">
               Avail FREE Standard Delivery on orders above ₹2000
             </div>
             <div className="flex items-center justify-between w-full md:w-[65%] px-4 py-2 bg-[#FBFBFF] fixed bottom-[4rem]">

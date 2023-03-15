@@ -23,7 +23,7 @@ const ProductFooter = ({ data }) => {
             <div key={index}>
               {location === item.path ? (
                 <div
-                  className="text-main-red text-[0.875rem] font-[500] border-main-red py-1 rounded-full px-3 border-[1px] flex items-center justify-center cursor-pointer"
+                  className="text-main-red text-[1.1rem] sm:text-[0.875rem] font-[500] border-main-red py-1 rounded-full px-3 border-[1px] flex items-center justify-center cursor-pointer"
                   onClick={() => navigate(item.path)}
                 >
                   <span>{item.icon}</span>
@@ -33,7 +33,7 @@ const ProductFooter = ({ data }) => {
                 <span
                   onClick={() => navigate(item.path)}
                   key={index}
-                  className="relative text-[1.1rem] bg-[white] cursor-pointer"
+                  className="relative text-[1.2rem] sm:text-[1.1rem] bg-[white] cursor-pointer"
                 >
                   {item.icon}
                   {item.badge > 0 && (

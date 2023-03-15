@@ -53,7 +53,7 @@ const LandingPage = () => {
             }
           `}</style>
           <div className="flex justify-center">
-            <div className="text-[1.35rem] md:text-[2.75rem] font-[600] max-w-[68.75rem] mt-[2.5rem] sm:mt-[3rem] px-6 md:px-4 text-center text-[#271939]">
+            <div className="text-[1.4rem] md:text-[2.75rem] font-[600] max-w-[68.75rem] mt-[2.5rem] sm:mt-[3rem] px-8 md:px-4 text-center text-[#271939]">
               Most trusted tailoring experience for women and kids in Bangalore,
               Hyderabad, Chennai and Mumbai
             </div>
