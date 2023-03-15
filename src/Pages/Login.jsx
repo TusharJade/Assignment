@@ -115,7 +115,7 @@ const Login = () => {
                 <button
                   type="button"
                   className="mt-1 p-2 border-green-400 w-full  text-sm font-bold text-green-600 rounded-md border-2 bg-green-100"
-                  onClick={async (e) => {
+                  onClick={async () => {
                     try {
                       const res = await axios.post(
                         "https://fakestoreapi.com/auth/login",

@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
       {isAuth.isLogin ? (
         <button
-          className="text-main-red text-[0.875rem] lg:text-[1rem] font-[600] rounded-md px-3 lg:px-4 bg-[#fce4e8] "
+          className="text-main-red text-[0.9375rem] lg:text-[1rem] font-[600] rounded-md px-3 lg:px-4 bg-[#fce4e8] "
           onClick={() => {
             localStorage.removeItem("token");
             localStorage.removeItem("userName");
@@ -56,7 +56,7 @@ const Navbar = () => {
         </button>
       ) : (
         <button
-          className="text-main-red font-[600] rounded-md px-4 bg-[#fce4e8] "
+          className="text-main-red text-[0.9375rem] font-[600] rounded-md px-3 lg:px-4 bg-[#fce4e8] lg:text-[1rem]"
           onClick={() => navigate("/login")}
         >
           Login / Sign Up
