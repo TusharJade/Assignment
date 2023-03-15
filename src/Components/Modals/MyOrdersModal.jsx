@@ -5,7 +5,7 @@ import { RxCross1 } from "react-icons/rx";
 const MyOrdersModal = ({ data, onClose }) => {
   return (
     <CentralModal>
-      <div className="absolute bg-[#FAFAFB] w-2/3 left-0 right-0 mx-auto  rounded-[2.25rem] px-5 py-6">
+      <div className="absolute bg-[#FAFAFB] w-5/6 sm:w-2/3 left-0 right-0 mx-auto  rounded-[2.25rem] px-5 py-6">
         <div className="text-[1.1rem] font-[500]">{data.address}</div>
         <div className="text-[#617EFF] font-Gilroy mt-1">
           <span className="font-[600]">Order Amount : </span>
@@ -15,11 +15,11 @@ const MyOrdersModal = ({ data, onClose }) => {
           </span>{" "}
         </div>
         <div className="mt-2 font-[500] text-blue-text">All Items:</div>
-        <div className="flex flex-wrap custom-scrollbar mt-4 h-[10rem] overflow-y-auto">
+        <div className="flex space-y-7 flex-wrap custom-scrollbar mt-4 h-[10rem] overflow-y-auto">
           {data.allProducts.map((item, index) => {
             return (
               <div
-                className="flex flex-col items-center w-1/2 text-center"
+                className="flex flex-col items-center w-full sm:w-1/2 text-center"
                 key={index}
               >
                 <img
