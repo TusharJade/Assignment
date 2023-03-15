@@ -30,8 +30,14 @@ const LandingPage = () => {
       <Navbar />
       <div className="w-full">
         <img
-          className="w-full cursor-pointer"
+          className="md:block hidden w-full cursor-pointer"
           src="assets/banner.jpeg"
+          onClick={() => navigate("/all-products")}
+          alt="banner"
+        />
+        <img
+          className="block md:hidden w-full cursor-pointer"
+          src="assets/banner.webp"
           onClick={() => navigate("/all-products")}
           alt="banner"
         />
@@ -47,12 +53,12 @@ const LandingPage = () => {
             }
           `}</style>
           <div className="flex justify-center">
-            <div className="text-[2.75rem] font-[600] max-w-[68.75rem] mt-[3rem] px-4 text-center text-[#271939]">
+            <div className="text-[1.35rem] md:text-[2.75rem] font-[600] max-w-[68.75rem] mt-[2.5rem] sm:mt-[3rem] px-6 md:px-4 text-center text-[#271939]">
               Most trusted tailoring experience for women and kids in Bangalore,
               Hyderabad, Chennai and Mumbai
             </div>
           </div>
-          <div className="flex mt-8 gap-6 w-full justify-center">
+          <div className="flex mt-8 gap-x-3.5 gap-y-6 sm:gap-6 w-full justify-center md:flex-nowrap sm:px-0 px-1.5 flex-wrap">
             {dummyData.map((item, index) => {
               return (
                 <div className="relative" key={index}>
@@ -73,7 +79,7 @@ const LandingPage = () => {
           </div>
           <div className="flex justify-center">
             <button
-              className="px-4 font-[600] text-[1.125rem] rounded-lg my-9 py-3.5 bg-[#D6407A] text-[white] min-h-[2.75rem] min-w-[8rem]"
+              className="px-4 font-[600] text-[1.1rem] sm:text-[1.125rem] rounded-lg sm:my-9 my-6 sm:py-3.5 py-2 bg-[#D6407A] text-[white] min-h-[2.75rem] min-w-[8rem]"
               onClick={() => navigate("/all-products")}
             >
               Explore our services

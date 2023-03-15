@@ -15,6 +15,8 @@ module.exports = {
       horizontalLine:
         "linear-gradient(89.77deg,#fc85b3 .14%,rgba(206,50,110,0) 99.74%)",
       addressline: "linear-gradient(#FFFFFF, #d6407a, #FFFFFF)",
+      footerLine:
+        "linear-gradient(89.77deg,rgba(206,50,110,0) .14%,#fc85b3 53.06%,rgba(206,50,110,0) 99.74%)",
     },
     extend: {},
   },
