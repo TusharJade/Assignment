@@ -22,16 +22,16 @@ const SelectAddressModal = ({ onClose, products, value }) => {
 
   return (
     <CentralModal>
-      <div className="relative bg-[#FAFAFB] w-2/3 left-0 right-0 mx-auto  rounded-[2.25rem] pb-5">
-        <div className="font-[600] text-[1.1rem] px-6 py-5">
+      <div className="relative bg-[#FAFAFB] w-5/6 sm:w-2/3 left-0 right-0 mx-auto rounded-[2.25rem] pb-3.5 sm:pb-5">
+        <div className="font-[600] text-[0.875rem] sm:text-[1.1rem] py-3.5 px-6 sm:py-5">
           Select Delivery Address
         </div>
         <div className="h-[1.5px] w-full bg-addressline"></div>
-        <div className="flex flex-col whitespace-pre-wrap space-y-3 font-[500] text-[1.1rem] px-9 py-5 overflow-y-auto  custom-scrollbar max-h-[12rem]">
+        <div className="flex flex-col break-words space-y-2 sm:space-y-3 font-[500] text-[12px] sm:text-[1.1rem] px-5 sm:px-9 sm:py-5 overflow-y-auto custom-scrollbar max-h-[12rem] sm:mt-0 mt-3">
           {address.map((item, index) => {
             return (
               <div key={index}>
-                <label className="flex space-x-5">
+                <label className="flex space-x-2.5 sm:space-x-5">
                   <input
                     type="radio"
                     name="address"
@@ -53,7 +53,7 @@ const SelectAddressModal = ({ onClose, products, value }) => {
           })}
         </div>
         <button
-          className="flex mx-auto items-center justify-center border-[1.5px] border-main-red w-[6rem] py-1 rounded-lg text-main-red font-[600] mt-4"
+          className="flex mx-auto items-center justify-center border-[1.5px] border-main-red sm:text-[1rem] text-[0.8125rem] w-[5rem] sm:w-[6rem] sm:py-1 py-[2px] rounded-lg text-main-red font-[600] mt-2 sm:mt-4"
           onClick={() => {
             if (finalData.address === "") {
               toast.error("Please select an address");
@@ -68,7 +68,7 @@ const SelectAddressModal = ({ onClose, products, value }) => {
         >
           Continue
         </button>
-        <div className="flex justify-center text-blue-text items-center font-[500] w-full mt-1">
+        <div className="flex justify-center text-blue-text items-center font-[500] text-[0.8125rem] sm:text-[1rem] w-full mt-1">
           Want to add new address?
           <span
             className="text-main-red cursor-pointer"

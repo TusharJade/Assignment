@@ -67,7 +67,7 @@ const MyProfile = () => {
             )}
           </div>
           <div
-            className="w-[65%] mx-auto mt-2 font-[600] bg-[#FFFFFB] flex items-center p-4 text-blue-text justify-between rounded-[0.875rem] cursor-pointer"
+            className="w-[65%] mx-auto sm:mt-2 mt-5 font-[600] bg-[#FFFFFB] flex items-center px-3.5 py-3 sm:p-4 text-blue-text justify-between sm:rounded-[0.875rem] rounded-xl cursor-pointer"
             onClick={() => {
               if (isAuth.isLogin) {
                 setIsAddress(true);

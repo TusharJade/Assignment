@@ -13,14 +13,14 @@ const AddressModal = ({ onClose }) => {
   return (
     <>
       <CentralModal>
-        <div className="relative bg-[#FAFAFB] w-2/3 left-0 right-0 mx-auto  rounded-[2.25rem] pb-5">
+        <div className="relative bg-[#FAFAFB] w-5/6 sm:w-2/3 left-0 right-0 mx-auto rounded-[2.25rem] pb-5">
           <div className="font-[600] text-[1.1rem] px-6 py-5">My Addresses</div>
           <div className="h-[1.5px] w-full bg-addressline"></div>
           {address?.length > 0 && (
             <div className="flex flex-col whitespace-pre-wrap space-y-3 font-[500] text-[1.1rem] px-9 py-5 overflow-y-auto  custom-scrollbar max-h-[12rem]">
               {address.map((item, index) => {
                 return (
-                  <div key={index} className="flex justify-between">
+                  <div key={index} className="flex break-words justify-between">
                     <div>
                       <div className="font-[400]">{item.address}</div>
                       <div className="text-[0.9rem] text-[#7C7C7C]">
